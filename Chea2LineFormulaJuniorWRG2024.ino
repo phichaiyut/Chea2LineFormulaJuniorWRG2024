@@ -1,5 +1,5 @@
 #include <POP32.h>
-#define NUM_SENSORS 4
+#define NUM_SENSORS 4 //จำนวนเซนเซอร์
 #define MaxSpeed 100
 #define MinSpeed -100
 
