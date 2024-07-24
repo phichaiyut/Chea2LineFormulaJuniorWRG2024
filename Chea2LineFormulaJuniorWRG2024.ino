@@ -1,5 +1,5 @@
 #include <POP32.h>
-#define NUM_SENSORS 4 //จำนวนเซนเซอร์
+#define NUM_SENSORS 4
 #define MaxSpeed 100
 #define MinSpeed -100
 
@@ -99,8 +99,8 @@ void setup() {
   // TrackCrossR(40, 0.034, 0.34, 'r');  // ใช้เซนเซอร์คู่ขวาในการนับแยก
   // TrackCrossC(40, 0.034, 0.34, 'r');  // ใช้เซนเซอร์คู่กลางในการนับแยก
   // TrackCross(40, 0.034, 0.34, 'r');   // PID จนกว่าจะเจอแยก TrackCross(Speed, Kp , Kd , 'คำสั่งเจอแยก'); 
-    TrackTime(70, 0.055, 2.30, 10000);                                                   // PID ด้วยเวลา TrackTime(Speed, Kp , Kd, เวลา); >> 1000 = 1 วินาที
-    //TrackSumValue(70, 0.055, 2.30, 4000, 's');                                           //TrackSumValue(speed, kp, kd, ค่าของเซนเซอร์, เงื่อนไข);
+    // TrackTime(70, 0.055, 2.30, 10000);                                                   // PID ด้วยเวลา TrackTime(Speed, Kp , Kd, เวลา); >> 1000 = 1 วินาที
+    TrackSumValue(70, 0.055, 2.30, 3000, 's');                                           //TrackSumValue(speed, kp, kd, ค่าของเซนเซอร์, เงื่อนไข);
 
 
 

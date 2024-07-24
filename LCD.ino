@@ -1,8 +1,15 @@
 void ShowCalibate(){
 oled.clear();
-  oled.text(0,0,"     Press OK  ");
-  oled.text(2,0,"        to ");
+  
   oled.text(3,0,"start caribrate Front Sensor");
+ 
+  oled.show();}
+
+  void FinishCalibate(){
+oled.clear();
+  oled.text(2,0,"          Finish   ");
+  oled.text(3,0," caribrate Front Sensor");
+  oled.text(3,0,"Press OK To Start");
  
   oled.show();}
   
@@ -10,14 +17,14 @@ oled.clear();
   oled.clear();                 //เคลียร์หน้าจอ
   oled.mode(0);                 //หมุนหน้าจอ 0 องศา
   oled.textSize(1);             //กำหนดขนาดตัวอักษร
-  oled.text(0,0,"Chea 2 Robotics"); //กำหนดข้อความที่จะแสดง
-  oled.text(1,0,"WRG 2024 Junior ");
-  oled.text(2,0,"OK : Normal");  
-  oled.text(3,0,"OK>2s Caribrate");
-  oled.text(4,0,"A : AutoCaribrate");
-  oled.text(5,0,"A>2s : ShowCaribrate");
-  oled.text(6,0,"B : AutoCaribrate");
-  oled.text(7,0,"B>2s : ShowAnalog");
+  oled.text(0,0,"  Chea 2 Robotics"); //กำหนดข้อความที่จะแสดง
+  oled.text(1,0,"  WRG 2024 Senior");
+  oled.text(2,0," SW_OK : Normal");  
+  oled.text(3,0," SW_OK > 2s Caribrate");
+  oled.text(4,0," SW_A : AutoCaribrate");
+  oled.text(5,0," SW_A > 2s : ShowCaribrate");
+  oled.text(6,0," SW_B : Sumvalue");
+  oled.text(7,0," SW_B > 2s : ShowAnalog");
   oled.show();  
   }
 

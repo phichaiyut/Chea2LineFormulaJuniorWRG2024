@@ -9,12 +9,13 @@ void CaliberateRobotSensor() {
   delay(500);
   Serial.println("Finish");
   Serial.println("  ");
-  Serial.print("SensorValue (");
+  Serial.print("SensorValueMin(");
   for (int i = 0; i < NUM_SENSORS; i++) {
     Serial.print(MinValue[i]);
     if (i < NUM_SENSORS - 1) Serial.print(",");
-    else Serial.print(",");
+    else Serial.print(");");
   }
+  Serial.print("SensorValueMax(");
   for (int i = 0; i < NUM_SENSORS; i++) {
     Serial.print(MaxValue[i]);
     if (i < NUM_SENSORS - 1) Serial.print(",");

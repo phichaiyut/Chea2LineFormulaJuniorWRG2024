@@ -131,47 +131,39 @@ void TrackTime(int Speed, float Kp, float Kd, int TotalTime) {
   beep(1);
 }
 
-void TrackSumValue(int Speed, float Kp, float Kd, int value, char select) {
+// ฟังก์ชันTrack ตามผลรวมของค่าเซ็นเซอร์
+void TrackSumValue(int Speed, float Kp, float Kd, int values, char select) {
   while (1) {
     PID(Speed,Kp,Kd);
-    
-    if (Read_sumValue_sensor() >= value) {
-      beep(1);
+     if (Read_sumValue_sensor() > values) {
+      beep(0);
+      TrackSelect(Speed, select);   
       break;
     }
+    
   }
-  TuneJc(Speed);
-  TrackSelect(Speed, select);
+
 }
 
-int Read_sumValue_sensor(){
-	unsigned int x = 0;
-  unsigned int SumValue = 0;
-    if (LineColor == 0) {
-   
+// ฟังก์ชันคำนวณผลรวมของค่าเซ็นเซอร์
+int Read_sumValue_sensor() {
+    int value = 0;
+    int SumValue = 0;
+
     for (int i = 0; i < NUM_SENSORS; i++) {
-      unsigned int calmin, calmax;
-      
-      calmin = MinValue[i];
-      calmax = MaxValue[i];
-      x = map(analog(i), calmin, calmax, 0, 1000);
-      if (x < 0) x = 0;
-      if (x > 1000) x = 1000;
-      SumValue += x;
+        int calmin = MinValue[i];
+        int calmax = MaxValue[i];
+
+        if (LineColor == 0) {
+            value = map(analog(i), calmin, calmax, 0, 1000);
+        } else {
+            value = map(analog(i), calmin, calmax, 1000, 0);
         }
-  } else {
-   
-    for (int i = 0; i < NUM_SENSORS; i++) {
-      unsigned int calmin, calmax;
-      
-      calmin = MinValue[i];
-      calmax = MaxValue[i];
-      x = map(analog(i), calmin, calmax, 1000, 0);
-      if (x < 0) x = 0;
-      if (x > 1000) x = 1000;
-      SumValue += x;
-      }
-     
-  } 
-  return SumValue;
+
+        if (value < 0) value = 0;
+        if (value > 1000) value = 1000;
+        SumValue += value;
+    }
+
+    return SumValue;
 }
