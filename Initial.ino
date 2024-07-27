@@ -1,4 +1,7 @@
-
+void Beep(int time)
+{	
+	sound(500,time);
+}
 void SensorValueMin(uint16_t minF0, uint16_t minF1, uint16_t minF2, uint16_t minF3){
 
   MinValue[0] = minF0;

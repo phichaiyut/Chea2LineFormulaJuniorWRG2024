@@ -31,7 +31,7 @@ void CalibrateSensor(int pauseTime, int samples) {
     MaxValue[i] = 0;
   }
   for (int startSamp = 0; startSamp <= samples; startSamp++) {
-    //ReadSensor();
+    
     for (int i = 0; i < NUM_SENSORS; i++) {
       MinValue[i] = (analog(i) <= MinValue[i] ? analog(i) : MinValue[i]);
       MaxValue[i] = (analog(i) >= MaxValue[i] ? analog(i) : MaxValue[i]);
@@ -63,7 +63,7 @@ void ReadCalibrate() {
 
 void SerialSensor() {
   while (1) {
-    //ReadSensor();
+    
     for (int _serialF = 0; _serialF < NUM_SENSORS; _serialF++) {
       Serial.print(analog(_serialF));
       Serial.print("\t");
