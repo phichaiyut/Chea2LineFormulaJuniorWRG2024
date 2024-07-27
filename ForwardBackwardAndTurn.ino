@@ -14,6 +14,6 @@ void ForwardSpeedTime(int MotorSpeed, int Time) {
 
 void BackwardSpeedTime(int MotorSpeed, int Time) {
   TuneMotor(MotorSpeed);
-  bk2(LeftBaseSpeed, RightBaseSpeed);
+  bk2(BackLeftBaseSpeed, BackRightBaseSpeed);
   delay(Time);
 }

@@ -2,8 +2,8 @@ void TracJC(int MotorSpeed,int Time){
     int Status = 0;
     while(Status == 0){
       ReadCalibrate();
-      if(F[0] > 550 && F[1]> 550) Status = 1;
-      else if(F[2] > 550 && F[3] > 550) Status = 1;
+      if(F[0] > 550 && F[1]> 550) Status = 0;
+      else if(F[2] > 550 && F[3] > 550) Status = 0;
       else if(F[0] > 550) tl(30);
       else if(F[1] > 550) sl(30);
       else if(F[2] > 550) sr(30);
@@ -132,10 +132,10 @@ void TrackTime(int Speed, float Kp, float Kd, int TotalTime) {
 }
 
 // ฟังก์ชันTrack ตามผลรวมของค่าเซ็นเซอร์
-void TrackSumValue(int Speed, float Kp, float Kd, int values, char select) {
+void TrackSumValue(int Speed, float Kp, float Kd, int valuess, char select) {
   while (1) {
     PID(Speed,Kp,Kd);
-     if (Read_sumValue_sensor() > values) {
+     if (Read_sumValue_sensor() > valuess) {
       beep(0);
       TrackSelect(Speed, select);   
       break;

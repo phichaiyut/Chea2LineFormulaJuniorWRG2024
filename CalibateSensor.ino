@@ -45,31 +45,19 @@ void CalibrateSensor(int pauseTime, int samples) {
   beep(1);
 }
 void ReadCalibrate() {
-  if (LineColor == 0) {
-   // ReadSensor();
-    for (int i = 0; i < NUM_SENSORS; i++) {
-      unsigned int calmin, calmax;
-      int x = 0;
-      calmin = MinValue[i];
-      calmax = MaxValue[i];
+  for (int i = 0; i < NUM_SENSORS; i++) {
+    unsigned int calmin, calmax;
+    int x = 0;
+    calmin = MinValue[i];
+    calmax = MaxValue[i];
+    if (LineColor == 0) {
       x = map(analog(i), calmin, calmax, 0, 1000);
-      if (x < 0) x = 0;
-      if (x > 1000) x = 1000;
-      F[i] = x;
-    }
-  } else {
-   // ReadSensor();
-    for (int i = 0; i < NUM_SENSORS; i++) {
-      unsigned int calmin, calmax;
-      int x = 0;
-      calmin = MinValue[i];
-      calmax = MaxValue[i];
+    } else {
       x = map(analog(i), calmin, calmax, 1000, 0);
-      // x = 800 - x;
-      if (x < 0) x = 0;
-      if (x > 1000) x = 1000;
-      F[i] = x;
     }
+    if (x < 0) x = 0;
+    if (x > 1000) x = 1000;
+    F[i] = x;
   }
 }
 

@@ -10,8 +10,8 @@ void TuneMotor(int BaseSpeed){
   
   if(BaseSpeed<=40)
   {
-    LeftBaseSpeed = BaseSpeed-0;
-    RightBaseSpeed = BaseSpeed-0;
+    LeftBaseSpeed = BaseSpeed-1;  //เอียงไปทางขวา เพิ่มเลข
+    RightBaseSpeed = BaseSpeed-0;  //เอียงซ้าย
     BackLeftBaseSpeed = BaseSpeed-0;
     BackRightBaseSpeed = BaseSpeed-0;
     // PID_Kp = 0.011;       //forward PID
@@ -23,8 +23,8 @@ void TuneMotor(int BaseSpeed){
   }
   else if(BaseSpeed<=50)
   {
-    LeftBaseSpeed = BaseSpeed-0;
-    RightBaseSpeed = BaseSpeed-0;
+    LeftBaseSpeed = BaseSpeed-1;  //เอียงไปทางขวา เพิ่มเลข
+    RightBaseSpeed = BaseSpeed-0;  //เอียงซ้าย
     BackLeftBaseSpeed = BaseSpeed-0;
     BackRightBaseSpeed = BaseSpeed-0;
     // PID_Kp = 0.014;       //forward PID
@@ -36,8 +36,8 @@ void TuneMotor(int BaseSpeed){
   }
   else if(BaseSpeed<=60)
   {
-    LeftBaseSpeed = BaseSpeed-0;
-    RightBaseSpeed = BaseSpeed-0;
+    LeftBaseSpeed = BaseSpeed-1;  //เอียงไปทางขวา เพิ่มเลข
+    RightBaseSpeed = BaseSpeed-0;  //เอียงซ้าย
     BackLeftBaseSpeed = BaseSpeed-0;
     BackRightBaseSpeed = BaseSpeed-0;
     // PID_Kp = 0.017;       //forward PID
@@ -49,10 +49,10 @@ void TuneMotor(int BaseSpeed){
   }
   else if(BaseSpeed<=70)
   {
-    LeftBaseSpeed = BaseSpeed-0;
-    RightBaseSpeed = BaseSpeed-0;
+    LeftBaseSpeed = BaseSpeed-1;  //เอียงไปทางขวา เพิ่มเลข
+    RightBaseSpeed = BaseSpeed-0;  //เอียงซ้าย
     BackLeftBaseSpeed = BaseSpeed-0;
-    BackRightBaseSpeed = BaseSpeed-0;
+    BackRightBaseSpeed = BaseSpeed-1;
     // PID_Kp = 0.030;       //forward PID
     // PID_Kd = 0.30;
     // Kt = 10;
@@ -62,8 +62,8 @@ void TuneMotor(int BaseSpeed){
   }
   else if(BaseSpeed<=80)
   {
-    LeftBaseSpeed = BaseSpeed-0;
-    RightBaseSpeed = BaseSpeed-0;
+    LeftBaseSpeed = BaseSpeed-1;  //เอียงไปทางขวา เพิ่มเลข
+    RightBaseSpeed = BaseSpeed-0;  //เอียงซ้าย
     BackLeftBaseSpeed = BaseSpeed-0;
     BackRightBaseSpeed = BaseSpeed-0;
     // PID_Kp = 0.025;       //forward PID
@@ -75,8 +75,8 @@ void TuneMotor(int BaseSpeed){
   }
   else if(BaseSpeed<=90)
   {
-    LeftBaseSpeed = BaseSpeed-0;
-    RightBaseSpeed = BaseSpeed-0;
+    LeftBaseSpeed = BaseSpeed-1;  //เอียงไปทางขวา เพิ่มเลข
+    RightBaseSpeed = BaseSpeed-0;  //เอียงซ้าย
     BackLeftBaseSpeed = BaseSpeed-0;
     BackRightBaseSpeed = BaseSpeed-0;
     // PID_Kp = 0.050;       //forward PID
@@ -89,8 +89,8 @@ void TuneMotor(int BaseSpeed){
 
   else
   {
-    LeftBaseSpeed = BaseSpeed-0;
-    RightBaseSpeed = BaseSpeed-0;
+    LeftBaseSpeed = BaseSpeed-1;  //เอียงไปทางขวา เพิ่มเลข
+    RightBaseSpeed = BaseSpeed-0;  //เอียงซ้าย
     BackLeftBaseSpeed = BaseSpeed-0;
     BackRightBaseSpeed = BaseSpeed-0;
   
