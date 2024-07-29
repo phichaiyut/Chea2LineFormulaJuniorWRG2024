@@ -52,7 +52,7 @@ void TrackCross(int Speed, float Kp, float Kd, char select) {
     PID(Speed, Kp, Kd);
     ReadCalibrate();
     if ((F[0] > 550 && F[3] > 550) || (F[0] > 550 && F[3] > 550) || (F[4] > 550 && F[7] > 550)) {
-      Beep(5);
+      Beep(50);
       break;
     }
   }
@@ -65,7 +65,7 @@ void TrackCrossC(int Speed, float Kp, float Kd, char select) {
     PID(Speed, Kp, Kd);
     ReadCalibrate();
     if ((F[0] > 550 && F[3] > 550)) {
-      Beep(5);
+      Beep(50);
       break;
     }
   }
@@ -78,11 +78,11 @@ void TrackCrossR(int Speed, float Kp, float Kd, char select) {
     PID(Speed, Kp, Kd);
     ReadCalibrate();
     if ((F[1] > 550 && F[3] > 550)) {
-      Beep(5);
+      Beep(50);
       break;
     }
   }
-  TuneJc(Speed);
+  //TuneJc(Speed);
   TrackSelect(Speed, select);
 }
 
@@ -91,7 +91,7 @@ void TrackCrossL(int Speed, float Kp, float Kd, char select) {
     PID(Speed, Kp, Kd);
     ReadCalibrate();
     if ((F[0] > 550 && F[2] > 550)) {
-      Beep(5);
+      Beep(50);
       break;
     }
   }
@@ -105,7 +105,7 @@ void TrackDistance(int Speed, float Kp, float Kd) {
     ReadCalibrate();
     if (analogRead(9) < 550) {
       MotorStop();
-      Beep(5);
+      Beep(50);
       break;
     }
   }
@@ -118,7 +118,7 @@ void TrackDistanceObstacleDetection(int Speed, float Kp, float Kd) {
     // ตรวจสอบเซ็นเซอร์ที่ตำแหน่ง 9 เพื่อตรวจจับสิ่งกีดขวาง
     if (analogRead(9) < 550) {
       MotorStop(); // หยุดมอเตอร์ทั้งหมด
-      Beep(5); // สัญญาณเสียงแจ้งเตือน
+      Beep(50); // สัญญาณเสียงแจ้งเตือน
 
       // รอจนกว่าสิ่งกีดขวางจะถูกเอาออก
       while (analogRead(9) < 550) {
@@ -134,7 +134,7 @@ void TrackTime(int Speed, float Kp, float Kd, int TotalTime) {
   while (millis() <= EndTime) {
     PID(Speed, Kp, Kd);
   }
-  Beep(5);
+  Beep(50);
 }
 
 // ฟังก์ชัน Track ตามผลรวมของค่าเซ็นเซอร์
@@ -142,7 +142,7 @@ void TrackSumValue(int Speed, float Kp, float Kd, int values, char select) {
   while (1) {
     PID(Speed,Kp,Kd);
      if (Read_sumValue_sensor() > values) {
-      Beep(10);
+      Beep(50);
       PID(Speed, 0, 0);  
       break;
     }
