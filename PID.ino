@@ -15,6 +15,7 @@ int readPosition(int Track, int noise) {
     }
   }
   if (!online) {
+    //ForwardSpeedTime(InitialSpeed, 350/InitialSpeed);
     if (last_value < (NUM_SENSORS - 1) * 1000 / 2) {
       return 0;
     } else {
@@ -27,6 +28,7 @@ int readPosition(int Track, int noise) {
 
 void PID(int Speed, float Kp, float Kd) {
   TuneMotor(Speed);
+  InitialSpeed = Speed;
   int Pos = readPosition(300, 50);
   int Error = Pos - ((NUM_SENSORS - 1) * 1000 / 2);
   int PID_Value = (Kp * Error) + (Kd * (Error - LastError));

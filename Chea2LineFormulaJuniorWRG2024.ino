@@ -16,6 +16,7 @@ int LineColor = 0;
 unsigned short distt = 0;
 long Timer, Timer2, Timer3;
 int LeftBaseSpeed, RightBaseSpeed,BackLeftBaseSpeed,BackRightBaseSpeed,SW_OK_Status;
+int InitialSpeed;
 void setup() {
   beep(0);
  Serial.begin(9600);
@@ -57,7 +58,7 @@ void setup() {
           beep(1);
           while(SW_A())  {}  //wait unpress SW A button
           if(ReadTimer() >= SwitchTime) {ShowReadCalibrate();} //Mode=Mode1;
-          else {CalibrateSensor(20, 200); SW_OK_press();beep(1);} //Mode=Mode2;
+          else {ShowCalibate();CalibrateSensor(20, 200);beep(1);beep(1); FinishCalibate(); SW_OK_press();beep(1);} //Mode=Mode2;
           SW_OK_Status = Yes;
        }
        if(SW_B()) 
